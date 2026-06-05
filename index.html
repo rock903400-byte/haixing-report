@@ -847,69 +847,18 @@
 
   /* ========== 列印 ========== */
   @media print {
-    @page { margin: 6mm; size: A4; }
-    body { font-size: 8.5px; line-height: 1.2; }
-    main { padding: 0; }
-    
-    .cover { 
-      min-height: auto; 
-      padding: 4px 10px; 
-      background: var(--navy) !important;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-      color: white !important;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .cover-inner { display: contents; }
-    .cover h1 { font-size: 1.1rem; margin: 0; display: inline; }
-    .cover h1 br { display: none; }
-    .cover h1 .accent { font-size: 0.9rem; margin-left: 6px; }
-    .cover-sub { font-size: 0.65rem; margin: 0; flex: 1; min-width: 200px; padding: 0 8px; }
-    .cover-meta { font-size: 0.6rem; gap: 2px 8px; margin: 0; }
-    .cover-meta div { border: none !important; padding: 0 !important; margin: 0 !important; }
-    .cover-tag, .scroll-hint, .cover::before, .cover::after { display: none !important; }
-    
-    section { padding: 3px 0; }
-    section h2 { font-size: 0.85rem; margin-bottom: 2px; }
-    section .lead { font-size: 0.65rem; margin-bottom: 3px; }
-    .eyebrow { display: none; }
-    
-    .kpi-grid { grid-template-columns: repeat(6, 1fr) !important; gap: 2px; margin-bottom: 3px; }
-    .kpi { padding: 3px 2px; }
-    .kpi .value { font-size: 0.9rem; }
-    .kpi .label { font-size: 0.55rem; }
-    .kpi .note { font-size: 0.5rem; }
-    
-    .position-card { padding: 4px 8px; margin: 3px 0; font-size: 0.65rem; line-height: 1.25; }
-    
-    .alert-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 3px; }
-    .alert { padding: 4px 6px; }
-    .alert-head { flex-direction: row; gap: 4px; align-items: center; }
-    .alert-title { font-size: 0.7rem; }
-    .alert-num { font-size: 0.55rem; }
-    .alert-stat { margin: 1px 0; }
-    .alert-stat .big { font-size: 0.9rem; }
-    .alert-stat .delta { font-size: 0.6rem; }
-    .alert ul { padding-left: 9px; margin: 1px 0; }
-    .alert li { font-size: 0.6rem; line-height: 1.2; margin-bottom: 0; }
-    
-    .chart-grid { display: none !important; }
-    
-    .risk-diagnosis { padding: 4px 6px; gap: 6px; flex-direction: row; }
-    .risk-badge { width: 40px; height: 40px; flex-shrink: 0; }
-    .risk-badge .emoji { font-size: 0.85rem; }
-    .risk-badge .label { font-size: 0.55rem; }
-    .risk-body h3 { font-size: 0.75rem; margin-bottom: 1px; }
-    .risk-body p { font-size: 0.65rem; margin-bottom: 3px; line-height: 1.25; }
-    .risk-table { font-size: 0.6rem; }
-    .risk-table th, .risk-table td { padding: 1px 3px; }
-    
-    .alert, .kpi { box-shadow: none !important; }
+    body { background: white; }
+    .cover { min-height: auto; padding: 40px 6vw; page-break-after: always; }
+    .cover::after, .cover::before, .scroll-hint { display: none; }
+    .qa summary::after { display: none; }
+    .qa-body { display: block !important; animation: none; }
+    details:not([open]) > *:not(summary) { display: block !important; }
+    details > summary { pointer-events: none; }
+    section { page-break-inside: avoid; padding: 40px 0; }
+    .alert, .chart-card, .kpi, .qa { box-shadow: none !important; page-break-inside: avoid; }
+    .closing { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .risk-badge::before { animation: none; }
+    .toolbar { display: none; }
   }
     .cover-inner { display: contents; }
     .cover h1 { font-size: 1.1rem; margin: 0; display: inline; }
