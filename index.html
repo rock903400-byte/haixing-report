@@ -847,57 +847,67 @@
 
   /* ========== 列印 ========== */
   @media print {
-    @page { margin: 8mm; size: A4; }
-    body { font-size: 9px; line-height: 1.25; }
+    @page { margin: 6mm; size: A4; }
+    body { font-size: 8.5px; line-height: 1.2; }
     main { padding: 0; }
     
     .cover { 
       min-height: auto; 
-      padding: 6px 12px; 
+      padding: 4px 10px; 
       page-break-after: avoid;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%) !important;
+      background: var(--navy) !important;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
       color: white !important;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
-    .cover h1 { font-size: 1.3rem; margin-bottom: 2px; }
-    .cover-sub { font-size: 0.7rem; margin-bottom: 4px; }
-    .cover-meta { font-size: 0.65rem; gap: 3px; flex-wrap: wrap; }
+    .cover-inner { display: contents; }
+    .cover h1 { font-size: 1.1rem; margin: 0; display: inline; }
+    .cover h1 br { display: none; }
+    .cover h1 .accent { font-size: 0.9rem; margin-left: 6px; }
+    .cover-sub { font-size: 0.65rem; margin: 0; flex: 1; min-width: 200px; padding: 0 8px; }
+    .cover-meta { font-size: 0.6rem; gap: 2px 8px; margin: 0; }
+    .cover-meta div { border: none !important; padding: 0 !important; margin: 0 !important; }
     .cover-tag, .scroll-hint, .cover::before, .cover::after { display: none !important; }
     
-    section { padding: 4px 0; page-break-inside: avoid; }
-    section h2 { font-size: 0.95rem; margin-bottom: 2px; }
-    section .lead { font-size: 0.7rem; margin-bottom: 4px; }
-    .eyebrow { font-size: 0.55rem; margin-bottom: 1px; display: none; }
+    section { padding: 3px 0; page-break-inside: avoid; }
+    section h2 { font-size: 0.85rem; margin-bottom: 2px; }
+    section .lead { font-size: 0.65rem; margin-bottom: 3px; }
+    .eyebrow { display: none; }
     
-    .kpi-grid { grid-template-columns: repeat(6, 1fr) !important; gap: 3px; }
-    .kpi { padding: 4px 3px; }
-    .kpi .value { font-size: 1rem; }
-    .kpi .label { font-size: 0.6rem; }
-    .kpi .note { font-size: 0.55rem; }
+    .kpi-grid { grid-template-columns: repeat(6, 1fr) !important; gap: 2px; margin-bottom: 3px; }
+    .kpi { padding: 3px 2px; }
+    .kpi .value { font-size: 0.9rem; }
+    .kpi .label { font-size: 0.55rem; }
+    .kpi .note { font-size: 0.5rem; }
     
-    .position-card { padding: 5px 10px; margin: 4px 0; font-size: 0.7rem; line-height: 1.3; }
+    .position-card { padding: 4px 8px; margin: 3px 0; font-size: 0.65rem; line-height: 1.25; }
     
-    .alert-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 4px; }
-    .alert { padding: 5px 8px; }
-    .alert-title { font-size: 0.75rem; }
-    .alert-num { font-size: 0.6rem; }
-    .alert-stat { margin: 2px 0; }
-    .alert-stat .big { font-size: 1rem; }
-    .alert-stat .delta { font-size: 0.65rem; }
-    .alert ul { padding-left: 10px; margin: 2px 0; }
-    .alert li { font-size: 0.65rem; line-height: 1.25; margin-bottom: 0; }
+    .alert-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 3px; }
+    .alert { padding: 4px 6px; }
+    .alert-head { flex-direction: row; gap: 4px; align-items: center; }
+    .alert-title { font-size: 0.7rem; }
+    .alert-num { font-size: 0.55rem; }
+    .alert-stat { margin: 1px 0; }
+    .alert-stat .big { font-size: 0.9rem; }
+    .alert-stat .delta { font-size: 0.6rem; }
+    .alert ul { padding-left: 9px; margin: 1px 0; }
+    .alert li { font-size: 0.6rem; line-height: 1.2; margin-bottom: 0; }
     
     .chart-grid { display: none !important; }
     
-    .risk-diagnosis { padding: 6px 8px; gap: 8px; }
-    .risk-badge { width: 50px; height: 50px; }
-    .risk-badge .emoji { font-size: 1rem; }
-    .risk-badge .label { font-size: 0.6rem; }
-    .risk-body h3 { font-size: 0.8rem; margin-bottom: 2px; }
-    .risk-body p { font-size: 0.7rem; margin-bottom: 4px; line-height: 1.3; }
-    .risk-table { font-size: 0.65rem; }
-    .risk-table th, .risk-table td { padding: 2px 4px; }
+    .risk-diagnosis { padding: 4px 6px; gap: 6px; flex-direction: row; }
+    .risk-badge { width: 40px; height: 40px; flex-shrink: 0; }
+    .risk-badge .emoji { font-size: 0.85rem; }
+    .risk-badge .label { font-size: 0.55rem; }
+    .risk-body h3 { font-size: 0.75rem; margin-bottom: 1px; }
+    .risk-body p { font-size: 0.65rem; margin-bottom: 3px; line-height: 1.25; }
+    .risk-table { font-size: 0.6rem; }
+    .risk-table th, .risk-table td { padding: 1px 3px; }
     
     .alert, .chart-card, .kpi { box-shadow: none !important; page-break-inside: avoid; }
     .risk-badge::before { animation: none; }
@@ -1051,7 +1061,7 @@
   </div>
 
   <div class="position-card">
-    海星社在嘉義區是<em>「規模第一、儲蓄最穩」</em>的標竿，但近 5 年出現一些需要留意的長期變化：<strong>社員逐漸減少、放款動能降溫、資產品質下滑</strong>。理事會可以藉這次會議，把「逾期處理」與「放款振興」列為優先推動的事項。
+    海星社是嘉義區<em>「規模第一、儲蓄最穩」</em>的標竿，但近 5 年<strong>社員減少、放款降溫、資產品質下滑</strong>。建議將「逾期處理」與「放款振興」列為優先事項。
    </div>
 </section>
 
@@ -1072,11 +1082,9 @@
         <span class="delta">↗ +3.25百分點</span>
       </div>
       <ul>
-        <li>113 年首次出現逾期 164 萬</li>
-        <li>114 年底略收斂至 140 萬、3.88%</li>
-        <li>115 年 4 月反彈至 <strong>251 萬、7.13%</strong>（精確值 2,509,677 元）</li>
-        <li>備抵呆帳_貸放社員 <strong>254 萬</strong></li>
-        <li><strong>須控管新案、不要讓逾期繼續擴大</strong></li>
+        <li>115 年 4 月 <strong>251 萬、7.13%</strong></li>
+        <li>備抵呆帳 <strong>254 萬</strong></li>
+        <li><strong>須控管新案</strong></li>
       </ul>
     </div>
 
@@ -1091,7 +1099,7 @@
       </div>
       <ul>
         <li>110 年 19.03% → 114 年 16.34%</li>
-        <li>直接影響利息收入</li>
+        <li>影響利息收入</li>
       </ul>
     </div>
 
@@ -1105,11 +1113,9 @@
         <span class="delta">-7.95%</span>
       </div>
       <ul>
-        <li>110 年 1,320 → 114 年 1,221（減少 105 人）</li>
-        <li>連續 5 年減少，尚未止跌</li>
-        <li>儲蓄率 99.6% 顯示原有社員忠誠度高</li>
-        <li>但 <strong>新社員加入不多</strong></li>
-        <li>已達到風險標準的「連續 3 年衰退」</li>
+        <li>110 年 1,320 → 114 年 1,221</li>
+        <li>連續 5 年減少</li>
+        <li><strong>新社員加入不足</strong></li>
       </ul>
     </div>
 
@@ -1313,7 +1319,7 @@
     </div>
     <div class="risk-body">
       <h3>有 2 項符合標準，建議加強輔導</h3>
-      <p>海星社目前在「逾期比率偏高且持續增加」與「社員連續多年減少」兩項同時需要留意，建議提報區會列入輔導名單，並一起討論改善方向。</p>
+      <p>「逾期比率偏高且持續增加」與「社員連續多年減少」兩項需留意，建議提報區會輔導。</p>
       <table class="risk-table">
         <thead><tr><th>條件</th><th>判定</th><th>數據</th></tr></thead>
         <tbody>
