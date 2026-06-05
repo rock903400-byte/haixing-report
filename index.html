@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海星社 理事會經營建議報告｜115 年 6 月</title>
+<style>
+  /* ========== 設計系統 ========== */
+  :root {
+    /* 主色 */
+    --navy: #0a1f3a;
+    --navy-2: #163557;
+    --navy-3: #234a73;
+    --gold: #b89357;
+    --gold-2: #d4b377;
+    --gold-3: #f0d9a8;
+    /* 文字 */
+    --ink: #0d1117;
+    --ink-2: #4a5568;
+    --ink-3: #8b95a4;
+    --ink-4: #c1c8d3;
+    /* 背景 */
+    --bg: #fafaf7;
+    --bg-2: #ffffff;
+    --bg-3: #f5f4ee;
+    --line: #e8e4d8;
+    --line-2: #d4cfc1;
+    /* 狀態色 */
+    --red: #c0392b;
+    --red-soft: #fef0ee;
+    --red-tint: #fbe3df;
+    --amber: #d68910;
+    --amber-soft: #fef5e7;
+    --amber-tint: #fce9c8;
+    --green: #1e8449;
+    --green-soft: #e8f6ee;
+    --green-tint: #c8e6d4;
+    --blue: #2980b9;
+    --blue-soft: #ebf3fa;
+    /* 陰影 */
+    --shadow-xs: 0 1px 3px rgba(10, 31, 58, 0.06);
+    --shadow-sm: 0 4px 12px -2px rgba(10, 31, 58, 0.08);
+    --shadow-md: 0 12px 24px -8px rgba(10, 31, 58, 0.12);
+    --shadow-lg: 0 24px 48px -12px rgba(10, 31, 58, 0.18);
+    --shadow-red: 0 12px 32px -8px rgba(192, 57, 43, 0.35);
+    --shadow-gold: 0 8px 24px -8px rgba(184, 147, 87, 0.4);
+    /* 圓角 */
+    --r-sm: 6px;
+    --r-md: 12px;
+    --r-lg: 20px;
+    --r-xl: 28px;
+    /* 過渡 */
+    --t-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --t-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --t-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 18px;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "kern", "liga";
+  }
+
+  ::selection { background: var(--gold-3); color: var(--navy); }
+
+  /* ========== 封面 ========== */
+  .cover {
+    min-height: min(640px, 88vh);
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(184, 147, 87, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 80%, rgba(184, 147, 87, 0.12) 0%, transparent 45%),
+      linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 50%, var(--navy-3) 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    pointer-events: none;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 1px; height: 70%;
+    background: linear-gradient(to bottom, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+    transform: translate(-50%, -50%) rotate(45deg);
+    opacity: 0.15;
+  }
+  .cover-inner { position: relative; z-index: 1; max-width: 900px; }
+  .cover-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.3em;
+    color: var(--gold-2);
+    border: 1px solid rgba(212, 179, 119, 0.4);
+    background: rgba(212, 179, 119, 0.08);
+    backdrop-filter: blur(8px);
+    padding: 8px 18px;
+    border-radius: 100px;
+    margin-bottom: 36px;
+    font-weight: 500;
+  }
+  .cover-mark::before {
+    content: "";
+    width: 6px; height: 6px;
+    background: var(--gold-2);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--gold-2);
+  }
+  .cover h1 {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+  }
+  .cover h1 .accent {
+    background: linear-gradient(135deg, var(--gold-2) 0%, var(--gold-3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .cover-sub {
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    color: rgba(255,255,255,0.85);
+    max-width: 720px;
+    margin-bottom: 56px;
+    line-height: 1.6;
+  }
+  .cover-sub .note {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.82em;
+    opacity: 0.7;
+    padding-left: 12px;
+    border-left: 2px solid var(--gold);
+  }
+  .cover-meta {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 28px;
+  }
+  .cover-meta div {
+    padding-right: 36px;
+    margin-right: 36px;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  .cover-meta div:last-child { border-right: none; }
+  .cover-meta strong {
+    display: block;
+    color: var(--gold-2);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .cover-meta span {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .cover-tag {
+    position: absolute;
+    top: 40px; right: 8vw;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.25em;
+    z-index: 1;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.4);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    z-index: 1;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-6px); }
+  }
+
+  /* ========== 章節容器 ========== */
+  main { max-width: 1140px; margin: 0 auto; padding: 0 6vw 80px; }
+  section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+  section:last-child { border-bottom: none; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 24px; height: 1px;
+    background: var(--gold);
+  }
+  h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--navy);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  h2 + .lead {
+    color: var(--ink-2);
+    font-size: 1.05rem;
+    max-width: 720px;
+    margin-bottom: 44px;
+    line-height: 1.6;
+  }
+  h3 {
+    font-size: 1.15rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: -0.01em;
+  }
+  h3 .dot {
+    display: inline-block; width: 8px; height: 8px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
+    transform: rotate(45deg);
+  }
+  p { color: var(--ink-2); margin-bottom: 14px; }
+  strong { color: var(--ink); font-weight: 700; }
+
+  /* ========== 定位卡 ========== */
+  .position-card {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(240, 217, 168, 0.15) 100%);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    padding: 36px 40px;
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-sm);
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink);
+    backdrop-filter: blur(8px);
+  }
+  .position-card em {
+    font-style: normal;
+    background: linear-gradient(transparent 62%, rgba(184, 147, 87, 0.4) 62%);
+    font-weight: 700;
+    padding: 0 2px;
+  }
+  .position-card .note {
+    display: block;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line-2);
+    font-size: 0.92rem;
+    color: var(--ink-2);
+  }
+  .position-card .note strong { color: var(--amber); }
+
+  /* ========== 數據 KPI ========== */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+    margin: 32px 0;
+  }
+  .kpi {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    padding: 24px 22px;
+    box-shadow: var(--shadow-xs);
+    transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+    position: relative;
+    overflow: hidden;
+  }
+  .kpi::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--ink-4);
+    transition: height var(--t-base);
+  }
+  .kpi:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--line-2); }
+  .kpi:hover::before { height: 4px; }
+  .kpi.good::before { background: linear-gradient(90deg, var(--green) 0%, var(--green-tint) 100%); }
+  .kpi.warn::before { background: linear-gradient(90deg, var(--amber) 0%, var(--amber-tint) 100%); }
+  .kpi.bad::before { background: linear-gradient(90deg, var(--red) 0%, var(--red-tint) 100%); }
+  .kpi .label {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .kpi .value {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .kpi .unit {
+    font-size: 0.85rem;
+    color: var(--ink-3);
+    font-weight: 500;
+    margin-left: 3px;
+  }
+  .kpi .note {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+  }
+  .kpi.good .value { color: var(--green); }
+  .kpi.warn .value { color: var(--amber); }
+  .kpi.bad .value { color: var(--red); }
+
+  /* ========== 警訊卡 ========== */
+  .alert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+  }
+  .alert {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 28px 30px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--t-base), box-shadow var(--t-base);
+  }
+  .alert:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .alert::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--ink-4);
+  }
+  .alert.red::before { background: var(--red); }
+  .alert.amber::before { background: var(--amber); }
+  .alert.green::before { background: var(--green); }
+  .alert.red { background: linear-gradient(180deg, var(--red-soft) 0%, var(--bg-2) 40%); }
+  .alert.amber { background: linear-gradient(180deg, var(--amber-soft) 0%, var(--bg-2) 40%); }
+  .alert.green { background: linear-gradient(180deg, var(--green-soft) 0%, var(--bg-2) 40%); }
+  .alert-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .alert-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .alert-num {
+    background: rgba(0,0,0,0.05);
+    color: var(--ink-2);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 100px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+  .alert.red .alert-num { background: var(--red); color: #fff; }
+  .alert.amber .alert-num { background: var(--amber); color: #fff; }
+  .alert.green .alert-num { background: var(--green); color: #fff; }
+  .alert-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 16px 0 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .alert-stat .big {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .alert-stat .big.red { color: var(--red); }
+  .alert-stat .big.amber { color: var(--amber); }
+  .alert-stat .big.green { color: var(--green); }
+  .alert-stat .delta {
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .alert.red .delta { color: var(--red); background: var(--red-tint); }
+  .alert.amber .delta { color: var(--amber); background: var(--amber-tint); }
+  .alert ul {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+  }
+  .alert li {
+    font-size: 0.92rem;
+    color: var(--ink-2);
+    padding: 6px 0 6px 24px;
+    position: relative;
+    line-height: 1.55;
+  }
+  .alert li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  /* ========== 圖表 ========== */
+  .chart-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 26px 30px;
+    box-shadow: var(--shadow-sm);
+    margin: 16px 0;
+    transition: box-shadow var(--t-base);
+  }
+  .chart-card:hover { box-shadow: var(--shadow-md); }
+  .chart-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .chart-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .chart-sub {
+    font-size: 0.82rem;
+    color: var(--ink-3);
+  }
+  .chart-badge {
+    background: var(--bg-3);
+    color: var(--ink-2);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+  }
+  .chart-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  @media (max-width: 760px) { .chart-grid { grid-template-columns: 1fr; } }
+  svg text { font-family: inherit; }
+
+  /* ========== 劣勢建議 ========== */
+  .suggest-list { display: grid; gap: 20px; }
+  .suggest-item {
+    display: flex;
+    gap: 20px;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 28px 30px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--t-base);
+  }
+  .suggest-item:hover { box-shadow: var(--shadow-md); }
+  .suggest-num {
+    flex: 0 0 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: var(--gold-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+  .suggest-body { flex: 1; min-width: 0; }
+  .suggest-body h4 {
+    font-size: 1.05rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .suggest-body p {
+    font-size: 0.92rem;
+    color: var(--ink-2);
+    line-height: 1.7;
+    margin: 0;
+  }
+  @media (max-width: 640px) {
+    .suggest-item { flex-direction: column; gap: 14px; padding: 22px 18px; }
+    .suggest-num { flex: 0 0 40px; width: 40px; height: 40px; font-size: 1.1rem; }
+  }
+
+  /* ========== 優劣勢分析 ========== */
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 640px) { .swot-grid { grid-template-columns: 1fr; } }
+  .swot-card {
+    border-radius: var(--r-lg);
+    padding: 28px 30px;
+    box-shadow: var(--shadow-sm);
+  }
+  .swot-card.strength {
+    background: linear-gradient(135deg, var(--green-soft) 0%, var(--bg-2) 50%);
+    border: 1px solid var(--green-tint);
+  }
+  .swot-card.weakness {
+    background: linear-gradient(135deg, var(--amber-soft) 0%, var(--bg-2) 50%);
+    border: 1px solid var(--amber-tint);
+  }
+  .swot-head {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid;
+    letter-spacing: 0.1em;
+  }
+  .swot-card.strength .swot-head { color: var(--green); border-color: var(--green); }
+  .swot-card.weakness .swot-head { color: var(--amber); border-color: var(--amber); }
+  .swot-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .swot-card li {
+    padding: 7px 0 7px 22px;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .swot-card.strength li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+  }
+  .swot-card.weakness li::before {
+    content: "✗";
+    position: absolute;
+    left: 0;
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  /* ========== 風險診斷 ========== */
+  .risk-diagnosis {
+    background:
+      radial-gradient(ellipse at 0% 0%, rgba(192, 57, 43, 0.08) 0%, transparent 50%),
+      linear-gradient(135deg, var(--red-soft) 0%, var(--bg-2) 50%);
+    border: 1px solid var(--red-tint);
+    border-left: 6px solid var(--red);
+    border-radius: var(--r-lg);
+    padding: 36px 40px;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow-sm);
+  }
+  .risk-badge {
+    flex: 0 0 auto;
+    background: linear-gradient(135deg, var(--red) 0%, #a02e22 100%);
+    color: #fff;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: var(--shadow-red);
+    position: relative;
+  }
+  .risk-badge::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border: 2px dashed rgba(192, 57, 43, 0.3);
+    border-radius: 50%;
+    animation: spin 20s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .risk-badge .emoji { font-size: 2.6rem; line-height: 1; }
+  .risk-badge .label { font-size: 1.1rem; margin-top: 6px; letter-spacing: 0.05em; }
+  .risk-body { flex: 1; min-width: 280px; }
+  .risk-body h3 {
+    color: var(--red);
+    margin: 0 0 12px;
+    font-size: 1.3rem;
+  }
+  .risk-body h3::before {
+    content: "⚠";
+    margin-right: 4px;
+  }
+  .risk-body > p {
+    color: var(--ink-2);
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+  .risk-table { width: 100%; border-collapse: collapse; margin-top: 12px; background: rgba(255,255,255,0.6); border-radius: var(--r-sm); overflow: hidden; }
+  .risk-table th, .risk-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--red-tint);
+    font-size: 0.9rem;
+  }
+  .risk-table tr:last-child td { border-bottom: none; }
+  .risk-table th {
+    color: var(--ink-3);
+    font-weight: 600;
+    background: rgba(192, 57, 43, 0.05);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .risk-table .trigger { color: var(--red); font-weight: 700; }
+  .risk-table .ok { color: var(--green); font-weight: 700; }
+
+  /* ========== 議程 ========== */
+  .agenda-list { counter-reset: agenda; }
+  .agenda-item {
+    display: flex;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px dashed var(--line);
+    counter-increment: agenda;
+    align-items: flex-start;
+  }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-num {
+    flex: 0 0 64px;
+    width: 64px; height: 64px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-3) 100%);
+    color: var(--gold-2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    box-shadow: 0 8px 20px -8px rgba(10, 31, 58, 0.4);
+    position: relative;
+  }
+  .agenda-num::before { content: counter(agenda, decimal-leading-zero); }
+  .agenda-body { flex: 1; padding-top: 8px; }
+  .agenda-body h4 {
+    font-size: 1.2rem;
+    color: var(--navy);
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .urgency {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 700;
+    margin-left: 8px;
+    vertical-align: middle;
+    letter-spacing: 0.05em;
+  }
+  .urgency.urgent { background: var(--red); color: #fff; }
+  .urgency.struct { background: var(--amber); color: #fff; }
+  .urgency.mid { background: var(--bg-3); color: var(--ink-2); border: 1px solid var(--line-2); }
+  .urgency.low { background: var(--green-soft); color: var(--green); border: 1px solid var(--green-tint); }
+  .agenda-body .sub {
+    color: var(--ink-2);
+    font-size: 0.95rem;
+    margin: 8px 0 14px;
+    line-height: 1.6;
+  }
+  .agenda-body ul { padding-left: 20px; color: var(--ink-2); font-size: 0.92rem; }
+  .agenda-body li { margin: 5px 0; line-height: 1.55; }
+  .agenda-body li::marker { color: var(--gold); }
+
+  /* ========== Q&A ========== */
+  .qa-grid { display: grid; gap: 14px; }
+  .qa {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    transition: box-shadow var(--t-base), border-color var(--t-base);
+  }
+  .qa:hover { border-color: var(--line-2); }
+  .qa[open] { box-shadow: var(--shadow-sm); border-color: var(--gold-3); }
+  .qa summary {
+    cursor: pointer;
+    padding: 20px 24px;
+    font-weight: 700;
+    color: var(--navy);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    transition: background var(--t-fast);
+    font-size: 0.98rem;
+  }
+  .qa summary::-webkit-details-marker { display: none; }
+  .qa summary:hover { background: var(--bg-3); }
+  .qa summary::after {
+    content: "+";
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-weight: 300;
+    transition: transform var(--t-base);
+    line-height: 1;
+    flex: 0 0 auto;
+  }
+  .qa[open] summary::after { content: "−"; }
+  .qa[open] summary { background: var(--bg-3); border-bottom: 1px solid var(--line); }
+  .qa-body {
+    padding: 4px 24px 22px;
+    color: var(--ink-2);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    animation: fadeIn 0.3s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .qa-body strong { color: var(--navy); }
+
+  /* ========== 結語 ========== */
+  .closing {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(184, 147, 87, 0.15) 0%, transparent 60%),
+      linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: #fff;
+    padding: 72px 48px;
+    border-radius: var(--r-xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .closing::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  }
+  .closing-inner { position: relative; z-index: 1; }
+  .closing .star { font-size: 2.6rem; display: inline-block; }
+  .closing h3 {
+    color: #fff;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin: 18px 0 16px;
+    font-weight: 800;
+  }
+  .closing h3 .dot { background: var(--gold-2); }
+  .closing p {
+    color: rgba(255,255,255,0.9);
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .closing .note {
+    margin-top: 20px;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 14px 20px;
+    background: rgba(255,255,255,0.06);
+    border-radius: var(--r-sm);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .closing .sig {
+    margin-top: 32px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ========== 列印 ========== */
+  @media print {
+    @page { margin: 1.5cm; }
+    body { 
+      background: white; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+    main { padding: 0; }
+    section { 
+      padding: 20px 0; 
+      page-break-inside: auto; 
+    }
+    section h2 { font-size: 1.4rem; margin-bottom: 8px; }
+    section .lead { font-size: 0.9rem; margin-bottom: 16px; }
+    .cover { 
+      min-height: auto; 
+      padding: 30px 5vw; 
+      page-break-after: always; 
+    }
+    .cover h1 { font-size: 2rem; }
+    .cover-sub { font-size: 0.95rem; }
+    .cover-meta { font-size: 0.85rem; gap: 8px; }
+    .cover::after, .cover::before, .scroll-hint { display: none; }
+    .kpi-grid { gap: 10px; }
+    .kpi { padding: 12px 10px; }
+    .kpi .value { font-size: 1.4rem; }
+    .kpi .label { font-size: 0.75rem; }
+    .kpi .note { font-size: 0.7rem; }
+    .alert-grid { gap: 12px; }
+    .alert { padding: 14px 16px; }
+    .alert-title { font-size: 0.95rem; }
+    .alert-stat .big { font-size: 1.6rem; }
+    .alert li { font-size: 0.85rem; line-height: 1.5; margin-bottom: 2px; }
+    .chart-grid { gap: 12px; }
+    .chart-card { padding: 14px; }
+    .chart-card svg { height: 150px !important; }
+    .chart-head { margin-bottom: 8px; }
+    .chart-title { font-size: 0.95rem; }
+    .chart-sub { font-size: 0.75rem; }
+    .position-card { padding: 16px 20px; margin: 16px 0; }
+    .risk-diagnosis { padding: 20px; gap: 20px; }
+    .risk-badge { width: 100px; height: 100px; }
+    .risk-badge .emoji { font-size: 1.6rem; }
+    .risk-badge .label { font-size: 0.8rem; }
+    .risk-table { font-size: 0.8rem; }
+    .risk-table th, .risk-table td { padding: 6px 8px; }
+    .alert, .chart-card, .kpi, .qa { box-shadow: none !important; page-break-inside: avoid; }
+    .closing { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .risk-badge::before { animation: none; }
+    .toolbar { display: none; }
+    .eyebrow { font-size: 0.7rem; margin-bottom: 4px; }
+  }
+
+  /* ========== 工具列 ========== */
+  .toolbar {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    display: flex; flex-direction: column; gap: 10px;
+    z-index: 99;
+  }
+  .toolbar button {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--navy);
+    color: var(--gold-2);
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--t-fast), background var(--t-fast);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .toolbar button:hover { transform: scale(1.1); background: var(--navy-2); }
+  .toolbar button:active { transform: scale(0.95); }
+
+  /* ========== 響應式 ========== */
+  @media (max-width: 768px) {
+    main { padding: 0 5vw 60px; }
+    section { padding: 56px 0; }
+    .cover { padding: 60px 6vw; }
+    .cover h1 { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+    .cover h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+    .cover-meta { flex-direction: column; gap: 12px; }
+    .cover-meta div {
+      padding-right: 0; margin-right: 0; padding-bottom: 12px;
+      border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .cover-meta div:last-child { border-bottom: none; }
+    .risk-diagnosis { padding: 28px 24px; gap: 24px; }
+    .risk-badge { width: 120px; height: 120px; }
+    .risk-badge .emoji { font-size: 2rem; }
+    .risk-badge .label { font-size: 0.9rem; }
+    .closing { padding: 48px 24px; }
+    .position-card { padding: 28px 24px; }
+    .toolbar button { width: 44px; height: 44px; font-size: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+    main { padding: 0 4vw 40px; max-width: 100vw; overflow-x: hidden; }
+    section { padding: 44px 0; }
+    .kpi-grid, .alert-grid { grid-template-columns: 1fr !important; }
+    .position-card .kpi-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+    .cover { padding: 48px 5vw; }
+    .cover-mark { font-size: 0.7rem; letter-spacing: 0.2em; padding: 6px 14px; }
+    .cover h1 { font-size: 2.4rem; }
+    .cover h2 { font-size: 1.7rem; }
+    .cover-mark + h1 { margin-top: 24px; }
+    .position-card { padding: 24px 18px; }
+    .position-card .kpi-num { font-size: 1.8rem; }
+    .kpi { padding: 16px 14px; }
+    .kpi-num { font-size: 1.6rem; }
+    .kpi-label, .alert-head h3 { font-size: 0.85rem; }
+    .alert { padding: 22px 18px; }
+    .alert-stat .big { font-size: 1.8rem; }
+    .alert ul { padding-left: 0; }
+    .alert li { font-size: 0.88rem; line-height: 1.65; }
+    .chart-card { padding: 20px 14px; }
+    .chart-head h3 { font-size: 1.05rem; }
+    .chart-badge { font-size: 0.65rem; padding: 4px 10px; }
+    .risk-diagnosis { padding: 22px 16px; gap: 18px; }
+    .risk-diagnosis > div:last-child { font-size: 0.88rem; }
+    .risk-badge { width: 90px; height: 90px; }
+    .risk-badge .emoji { font-size: 1.5rem; }
+    .risk-badge .label { font-size: 0.72rem; letter-spacing: 0.05em; }
+    .agenda-item { padding-left: 72px; }
+    .agenda-num { width: 50px; height: 50px; font-size: 1.1rem; }
+    .agenda-item h3 { font-size: 1.05rem; }
+    .agenda-item li { font-size: 0.88rem; }
+    .closing { padding: 36px 18px; }
+    .closing h2 { font-size: 1.5rem; }
+    .closing-text { font-size: 0.92rem; }
+    .qa summary { font-size: 0.92rem; padding: 14px 16px; }
+    .qa-body { padding: 4px 16px 18px; font-size: 0.88rem; }
+    section h2 { font-size: 1.5rem; }
+    section .lead { font-size: 0.95rem; }
+    .toolbar { bottom: 16px; right: 16px; }
+    .toolbar button { width: 40px; height: 40px; font-size: 0.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-tag">內部文件</div>
+  <div class="cover-inner">
+    <h1>海星社<br><span class="accent">五年趨勢比較</span></h1>
+    <p class="cover-sub">
+      嘉義區的優等生，但在資金運用、社員人數、資產品質這三方面都面臨挑戰。本報告以數據為基礎，提供幾點提醒供理事會參考。
+    </p>
+    <div class="cover-meta">
+      <div><strong>社號</strong><span>3403 · 嘉義區</span></div>
+      <div><strong>資料截止</strong><span>115 年 4 月</span></div>
+      <div><strong>比較基準</strong><span>嘉義區 18 社</span></div>
+      <div><strong>報告日期</strong><span>115 年 6 月</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL ↓</div>
+</div>
+
+<main>
+
+<!-- ========== 一、定位 ========== -->
+<section>
+  <span class="eyebrow">01 · Positioning</span>
+  <h2>海星是嘉義區的「優等生大哥」</h2>
+  <p class="lead">規模最大、儲蓄最多，但在放款能力、資產品質、社員成長這三方面都需要留意。</p>
+
+  <div class="kpi-grid">
+    <div class="kpi good">
+      <div class="label">社員數</div>
+      <div class="value">1,221<span class="unit">人</span></div>
+      <div class="note">嘉義區第 1</div>
+    </div>
+    <div class="kpi good">
+      <div class="label">股金總額</div>
+      <div class="value">2.02<span class="unit">億元</span></div>
+      <div class="note">嘉義區第 1</div>
+    </div>
+    <div class="kpi good">
+      <div class="label">儲蓄率</div>
+      <div class="value">99.6<span class="unit">%</span></div>
+      <div class="note">嘉義區第 1</div>
+    </div>
+    <div class="kpi warn">
+      <div class="label">貸放比</div>
+      <div class="value">16.3<span class="unit">%</span></div>
+      <div class="note">嘉義區末位，有進步空間</div>
+    </div>
+    <div class="kpi warn">
+      <div class="label">逾放比（115/04）</div>
+      <div class="value">7.13<span class="unit">%</span></div>
+      <div class="note">↗ 半年從 3.88% 上升到 7.13%</div>
+    </div>
+    <div class="kpi bad">
+      <div class="label">社員年增</div>
+      <div class="value">-28<span class="unit">人/年</span></div>
+      <div class="note">連續 5 年衰退</div>
+    </div>
+  </div>
+
+  <div class="position-card">
+    海星社在嘉義區是<em>「規模第一、儲蓄最穩」</em>的標竿，但近 5 年出現一些需要留意的長期變化：<strong>社員逐漸減少、放款動能降溫、資產品質下滑</strong>。理事會可以藉這次會議，把「逾期處理」與「放款振興」列為優先推動的事項。
+   </div>
+</section>
+
+<!-- ========== 二、五項觀察重點 ========== -->
+<section>
+  <span class="eyebrow">02 · Key Alerts</span>
+  <h2>五項觀察重點</h2>
+  <p class="lead">依優先順序排列。紅燈區建議優先處理，黃燈區也要持續關心。</p>
+
+  <div class="alert-grid">
+    <div class="alert red">
+      <div class="alert-head">
+        <div class="alert-title">逾放比半年上升 84%</div>
+        <div class="alert-num">需優先關注</div>
+      </div>
+      <div class="alert-stat">
+        <span class="big red">7.13%</span>
+        <span class="delta">↗ +3.25百分點</span>
+      </div>
+      <ul>
+        <li>113 年首次出現逾期 164 萬</li>
+        <li>114 年底略收斂至 140 萬、3.88%</li>
+        <li>115 年 4 月反彈至 <strong>251 萬、7.13%</strong>（精確值 2,509,677 元）</li>
+        <li>備抵呆帳_貸放社員 <strong>254 萬</strong></li>
+        <li><strong>須控管新案、不要讓逾期繼續擴大</strong></li>
+      </ul>
+    </div>
+
+    <div class="alert red">
+      <div class="alert-head">
+        <div class="alert-title">貸放比連 5 年下滑</div>
+        <div class="alert-num">長期問題</div>
+      </div>
+      <div class="alert-stat">
+        <span class="big red">16.34%</span>
+        <span class="delta">↘ -2.7百分點</span>
+      </div>
+      <ul>
+        <li>110 年 19.03% → 114 年 16.34%</li>
+        <li>直接影響利息收入</li>
+      </ul>
+    </div>
+
+    <div class="alert amber">
+      <div class="alert-head">
+        <div class="alert-title">社員連續 5 年減少</div>
+        <div class="alert-num">值得關注</div>
+      </div>
+      <div class="alert-stat">
+        <span class="big amber">-105<span style="font-size:1rem">人</span></span>
+        <span class="delta">-7.95%</span>
+      </div>
+      <ul>
+        <li>110 年 1,320 → 114 年 1,221（減少 105 人）</li>
+        <li>連續 5 年減少，尚未止跌</li>
+        <li>儲蓄率 99.6% 顯示原有社員忠誠度高</li>
+        <li>但 <strong>新社員加入不多</strong></li>
+        <li>已達到風險標準的「連續 3 年衰退」</li>
+      </ul>
+    </div>
+
+    <div class="alert amber">
+      <div class="alert-head">
+        <div class="alert-title">開支比 5 年上升 10 個百分點</div>
+        <div class="alert-num">持續增加</div>
+      </div>
+      <div class="alert-stat">
+        <span class="big amber">73.06%</span>
+        <span class="delta">↗ +9.65百分點</span>
+      </div>
+      <ul>
+        <li>110 年 63.41% → 115/04 73.06%</li>
+        <li>未破 100% 警戒線</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== 三、五年趨勢圖表 ========== -->
+<section>
+  <span class="eyebrow">03 · 5-Year Trends</span>
+  <h2>五年趨勢圖表</h2>
+  <p class="lead">六項關鍵指標的歷年走勢，可以看出問題是長期性的，不是短期的波動。</p>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">社員數（年底）</div>
+           <div class="chart-sub">連續 5 年下滑，累計減少 105 人</div>
+        </div>
+        <div class="chart-badge">DECLINE</div>
+      </div>
+      <svg viewBox="0 0 360 200" width="100%" height="200">
+        <defs>
+          <linearGradient id="g-navy" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#163557"/>
+            <stop offset="100%" stop-color="#0a1f3a"/>
+          </linearGradient>
+          <linearGradient id="g-gold" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#d4b377"/>
+            <stop offset="100%" stop-color="#b89357"/>
+          </linearGradient>
+          <linearGradient id="g-red" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#d65a4a"/>
+            <stop offset="100%" stop-color="#a02e22"/>
+          </linearGradient>
+        </defs>
+        <line x1="40" y1="170" x2="340" y2="170" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="20" x2="40" y2="170" stroke="#d4cfc1" stroke-width="1"/>
+        <text x="34" y="174" text-anchor="end" font-size="10" fill="#8b95a4">1200</text>
+        <text x="34" y="124" text-anchor="end" font-size="10" fill="#8b95a4">1300</text>
+        <text x="34" y="74" text-anchor="end" font-size="10" fill="#8b95a4">1400</text>
+        <text x="34" y="24" text-anchor="end" font-size="10" fill="#8b95a4">1500</text>
+        <rect x="55"  y="32"  width="35" height="138" fill="url(#g-navy)" rx="3"/>
+        <text x="72"  y="28"  text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,320</text>
+        <rect x="105" y="44"  width="35" height="126" fill="url(#g-navy)" rx="3"/>
+        <text x="122" y="40" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,292</text>
+        <rect x="155" y="50"  width="35" height="120" fill="url(#g-navy)" rx="3"/>
+        <text x="172" y="46" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,277</text>
+        <rect x="205" y="62"  width="35" height="108" fill="url(#g-gold)" rx="3"/>
+        <text x="222" y="58" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,249</text>
+        <rect x="255" y="74"  width="35" height="96"  fill="url(#g-gold)" rx="3"/>
+        <text x="272" y="70" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,221</text>
+        <rect x="305" y="76"  width="35" height="94"  fill="url(#g-red)" rx="3"/>
+        <text x="322" y="72" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">1,215</text>
+        <text x="72"  y="186" text-anchor="middle" font-size="10" fill="#8b95a4">110</text>
+        <text x="122" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">111</text>
+        <text x="172" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">112</text>
+        <text x="222" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">113</text>
+        <text x="272" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">114</text>
+        <text x="322" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">115/4</text>
+      </svg>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">逾放比（年底，%）</div>
+          <div class="chart-sub">113 年首次出現，115 年 4 月已達 7.13%</div>
+        </div>
+        <div class="chart-badge">RISING</div>
+      </div>
+      <svg viewBox="0 0 360 200" width="100%" height="200">
+        <line x1="40" y1="170" x2="340" y2="170" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="20" x2="40" y2="170" stroke="#d4cfc1" stroke-width="1"/>
+        <text x="34" y="174" text-anchor="end" font-size="10" fill="#8b95a4">0</text>
+        <text x="34" y="124" text-anchor="end" font-size="10" fill="#8b95a4">3</text>
+        <text x="34" y="74" text-anchor="end" font-size="10" fill="#8b95a4">6</text>
+        <text x="34" y="24" text-anchor="end" font-size="10" fill="#8b95a4">9</text>
+        <rect x="55"  y="161" width="35" height="9"   fill="#1e8449" rx="3"/>
+        <text x="72"  y="156" text-anchor="middle" font-size="11" fill="#1e8449" font-weight="700">0.53</text>
+        <rect x="105" y="170" width="35" height="2"   fill="#1e8449" rx="3"/>
+        <rect x="155" y="170" width="35" height="2"   fill="#1e8449" rx="3"/>
+        <rect x="205" y="94"  width="35" height="76"  fill="#d68910" rx="3"/>
+        <text x="222" y="90" text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">4.55</text>
+        <rect x="255" y="105" width="35" height="65"  fill="#d68910" rx="3"/>
+        <text x="272" y="101" text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">3.88</text>
+        <rect x="305" y="51"  width="35" height="119" fill="url(#g-red)" rx="3"/>
+        <text x="322" y="47" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">7.13</text>
+        <text x="72"  y="186" text-anchor="middle" font-size="10" fill="#8b95a4">110</text>
+        <text x="122" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">111</text>
+        <text x="172" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">112</text>
+        <text x="222" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">113</text>
+        <text x="272" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">114</text>
+        <text x="322" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">115/4</text>
+      </svg>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">貸放比（%）</div>
+           <div class="chart-sub">連年下滑，從 19% 降至 16%</div>
+        </div>
+        <div class="chart-badge">DECLINE</div>
+      </div>
+      <svg viewBox="0 0 360 200" width="100%" height="200">
+        <line x1="40" y1="170" x2="340" y2="170" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="20" x2="40" y2="170" stroke="#d4cfc1" stroke-width="1"/>
+        <text x="34" y="174" text-anchor="end" font-size="10" fill="#8b95a4">0</text>
+        <text x="34" y="134" text-anchor="end" font-size="10" fill="#8b95a4">5</text>
+        <text x="34" y="94" text-anchor="end" font-size="10" fill="#8b95a4">10</text>
+        <text x="34" y="54" text-anchor="end" font-size="10" fill="#8b95a4">15</text>
+        <text x="34" y="14" text-anchor="end" font-size="10" fill="#8b95a4">20</text>
+        <rect x="55"  y="22" width="35" height="148" fill="url(#g-navy)" rx="3"/>
+        <text x="72"  y="18" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">19.0</text>
+        <rect x="105" y="34" width="35" height="136" fill="url(#g-navy)" rx="3"/>
+        <text x="122" y="30" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">17.4</text>
+        <rect x="155" y="48" width="35" height="122" fill="url(#g-navy)" rx="3"/>
+        <text x="172" y="44" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">15.6</text>
+        <rect x="205" y="44" width="35" height="126" fill="url(#g-gold)" rx="3"/>
+        <text x="222" y="40" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">16.2</text>
+        <rect x="255" y="43" width="35" height="127" fill="url(#g-gold)" rx="3"/>
+        <text x="272" y="39" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">16.3</text>
+        <rect x="305" y="44" width="35" height="126" fill="url(#g-red)" rx="3"/>
+        <text x="322" y="40" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">16.1</text>
+        <text x="72"  y="186" text-anchor="middle" font-size="10" fill="#8b95a4">110</text>
+        <text x="122" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">111</text>
+        <text x="172" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">112</text>
+        <text x="222" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">113</text>
+        <text x="272" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">114</text>
+        <text x="322" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">115/4</text>
+      </svg>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">開支比（年底，%）</div>
+          <div class="chart-sub">5 年上升 10 個百分點，趨勢向上</div>
+        </div>
+        <div class="chart-badge">RISING</div>
+      </div>
+      <svg viewBox="0 0 360 200" width="100%" height="200">
+        <line x1="40" y1="170" x2="340" y2="170" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="20" x2="40" y2="170" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="55" x2="340" y2="55" stroke="#c0392b" stroke-dasharray="4 3" stroke-width="1.5"/>
+        <text x="335" y="52" text-anchor="end" font-size="9" fill="#c0392b">警戒 100%</text>
+        <text x="34" y="174" text-anchor="end" font-size="10" fill="#8b95a4">0</text>
+        <text x="34" y="124" text-anchor="end" font-size="10" fill="#8b95a4">40</text>
+        <text x="34" y="74" text-anchor="end" font-size="10" fill="#8b95a4">80</text>
+        <text x="34" y="24" text-anchor="end" font-size="10" fill="#8b95a4">120</text>
+        <rect x="55"  y="91"  width="35" height="79"  fill="#1e8449" rx="3"/>
+        <text x="72"  y="87"  text-anchor="middle" font-size="11" fill="#1e8449" font-weight="700">63.4</text>
+        <rect x="105" y="90"  width="35" height="80"  fill="#1e8449" rx="3"/>
+        <text x="122" y="86"  text-anchor="middle" font-size="11" fill="#1e8449" font-weight="700">63.9</text>
+        <rect x="155" y="72"  width="35" height="98"  fill="#d68910" rx="3"/>
+        <text x="172" y="68"  text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">78.2</text>
+        <rect x="205" y="84"  width="35" height="86"  fill="#1e8449" rx="3"/>
+        <text x="222" y="80"  text-anchor="middle" font-size="11" fill="#1e8449" font-weight="700">68.5</text>
+        <rect x="255" y="82"  width="35" height="88"  fill="#1e8449" rx="3"/>
+        <text x="272" y="78"  text-anchor="middle" font-size="11" fill="#1e8449" font-weight="700">70.7</text>
+        <rect x="305" y="79"  width="35" height="91"  fill="#d68910" rx="3"/>
+        <text x="322" y="75"  text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">73.1</text>
+        <text x="72"  y="186" text-anchor="middle" font-size="10" fill="#8b95a4">110</text>
+        <text x="122" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">111</text>
+        <text x="172" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">112</text>
+        <text x="222" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">113</text>
+        <text x="272" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">114</text>
+        <text x="322" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">115/4</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== 五、風險診斷 ========== -->
+<section>
+  <span class="eyebrow">05 · Risk Diagnosis</span>
+  <h2>2/5 風險原則診斷</h2>
+  <p class="lead">按照風險判斷標準，五項條件中只要符合兩項，就列為「重點輔導」對象。</p>
+
+  <div class="risk-diagnosis">
+    <div class="risk-badge">
+      <div class="emoji">🚨</div>
+      <div class="label">重點輔導</div>
+    </div>
+    <div class="risk-body">
+      <h3>有 2 項符合標準，建議加強輔導</h3>
+      <p>海星社目前在「逾期比率偏高且持續增加」與「社員連續多年減少」兩項同時需要留意，建議提報區會列入輔導名單，並一起討論改善方向。</p>
+      <table class="risk-table">
+        <thead><tr><th>條件</th><th>判定</th><th>數據</th></tr></thead>
+        <tbody>
+          <tr><td>1. 連續兩年虧損（開支比超過 100%）</td><td class="ok">✓ 未達到</td><td>113=68% · 114=71%</td></tr>
+          <tr><td>2. 放款比率太低（低於 10%）</td><td class="ok">✓ 未達到</td><td>16.34%</td></tr>
+           <tr><td>3. 逾期比率偏高且持續增加（超過 5% 且今年逾期比去年多）</td><td class="trigger">✗ 已達到</td><td>7.13% · 251 萬 &gt; 140 萬</td></tr>
+          <tr><td>4. 社員連續三年減少</td><td class="trigger">✗ 已達到</td><td>1,215 &lt; 1,221 &lt; 1,249</td></tr>
+          <tr><td>5. 股金連續三年減少</td><td class="ok">✓ 未達到</td><td>微降但未連 3 跌</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+
+</body>
+</html>
