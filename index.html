@@ -847,56 +847,60 @@
 
   /* ========== 列印 ========== */
   @media print {
-    @page { margin: 1.5cm; }
-    body { 
-      background: white; 
-      font-size: 14px; 
-      line-height: 1.5; 
-    }
+    @page { margin: 1cm; size: A4; }
+    body { font-size: 10px; line-height: 1.3; }
     main { padding: 0; }
-    section { 
-      padding: 20px 0; 
-      page-break-inside: auto; 
-    }
-    section h2 { font-size: 1.4rem; margin-bottom: 8px; }
-    section .lead { font-size: 0.9rem; margin-bottom: 16px; }
+    
     .cover { 
       min-height: auto; 
-      padding: 30px 5vw; 
-      page-break-after: always; 
+      padding: 10px 15px; 
+      page-break-after: avoid;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color: white !important;
     }
-    .cover h1 { font-size: 2rem; }
-    .cover-sub { font-size: 0.95rem; }
-    .cover-meta { font-size: 0.85rem; gap: 8px; }
-    .cover::after, .cover::before, .scroll-hint { display: none; }
-    .kpi-grid { gap: 10px; }
-    .kpi { padding: 12px 10px; }
-    .kpi .value { font-size: 1.4rem; }
-    .kpi .label { font-size: 0.75rem; }
-    .kpi .note { font-size: 0.7rem; }
-    .alert-grid { gap: 12px; }
-    .alert { padding: 14px 16px; }
-    .alert-title { font-size: 0.95rem; }
-    .alert-stat .big { font-size: 1.6rem; }
-    .alert li { font-size: 0.85rem; line-height: 1.5; margin-bottom: 2px; }
-    .chart-grid { gap: 12px; }
-    .chart-card { padding: 14px; }
-    .chart-card svg { height: 150px !important; }
-    .chart-head { margin-bottom: 8px; }
-    .chart-title { font-size: 0.95rem; }
-    .chart-sub { font-size: 0.75rem; }
-    .position-card { padding: 16px 20px; margin: 16px 0; }
-    .risk-diagnosis { padding: 20px; gap: 20px; }
-    .risk-badge { width: 100px; height: 100px; }
-    .risk-badge .emoji { font-size: 1.6rem; }
-    .risk-badge .label { font-size: 0.8rem; }
-    .risk-table { font-size: 0.8rem; }
-    .risk-table th, .risk-table td { padding: 6px 8px; }
-    .alert, .chart-card, .kpi, .qa { box-shadow: none !important; page-break-inside: avoid; }
-    .closing { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cover h1 { font-size: 1.6rem; margin-bottom: 4px; }
+    .cover-sub { font-size: 0.8rem; margin-bottom: 6px; }
+    .cover-meta { font-size: 0.7rem; gap: 4px; flex-wrap: wrap; }
+    .cover-tag, .scroll-hint, .cover::before, .cover::after { display: none !important; }
+    
+    section { padding: 8px 0; page-break-inside: avoid; }
+    section h2 { font-size: 1.1rem; margin-bottom: 4px; }
+    section .lead { font-size: 0.75rem; margin-bottom: 6px; }
+    .eyebrow { font-size: 0.6rem; margin-bottom: 2px; }
+    
+    .kpi-grid { grid-template-columns: repeat(6, 1fr) !important; gap: 4px; }
+    .kpi { padding: 6px 4px; }
+    .kpi .value { font-size: 1.1rem; }
+    .kpi .label { font-size: 0.65rem; }
+    .kpi .note { font-size: 0.6rem; }
+    
+    .position-card { padding: 8px 12px; margin: 6px 0; font-size: 0.75rem; }
+    
+    .alert-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 6px; }
+    .alert { padding: 8px 10px; }
+    .alert-title { font-size: 0.8rem; }
+    .alert-num { font-size: 0.65rem; }
+    .alert-stat { margin: 4px 0; }
+    .alert-stat .big { font-size: 1.2rem; }
+    .alert-stat .delta { font-size: 0.7rem; }
+    .alert ul { padding-left: 12px; }
+    .alert li { font-size: 0.7rem; line-height: 1.3; margin-bottom: 1px; }
+    
+    .chart-grid { display: none !important; }
+    
+    .risk-diagnosis { padding: 10px; gap: 10px; }
+    .risk-badge { width: 60px; height: 60px; }
+    .risk-badge .emoji { font-size: 1.2rem; }
+    .risk-badge .label { font-size: 0.65rem; }
+    .risk-body h3 { font-size: 0.9rem; margin-bottom: 4px; }
+    .risk-body p { font-size: 0.75rem; margin-bottom: 6px; }
+    .risk-table { font-size: 0.7rem; }
+    .risk-table th, .risk-table td { padding: 3px 5px; }
+    
+    .alert, .chart-card, .kpi { box-shadow: none !important; page-break-inside: avoid; }
     .risk-badge::before { animation: none; }
-    .toolbar { display: none; }
-    .eyebrow { font-size: 0.7rem; margin-bottom: 4px; }
   }
 
   /* ========== 工具列 ========== */
