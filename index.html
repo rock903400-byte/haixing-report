@@ -19,22 +19,22 @@
     --gray-50: #f7fafc;
     --gray-100: #edf2f7;
     --gray-200: #e2e8f0;
-    --gray-300: #cbd5e0;
+    --gray-400: #a0aec0;
     --gray-500: #718096;
     --gray-600: #4a5568;
     --gray-700: #2d3748;
-    --gray-900: #1a202c;
-    --radius: 12px;
+    --gray-800: #1a202c;
+    --radius: 14px;
     --shadow: 0 2px 8px rgba(0,0,0,0.08);
     --shadow-lg: 0 4px 16px rgba(0,0,0,0.12);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 20px;
+    line-height: 1.8;
     color: var(--gray-700);
     background: var(--gray-50);
     -webkit-font-smoothing: antialiased;
@@ -42,68 +42,69 @@
 
   /* ========== 封面 ========== */
   .cover {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    background: linear-gradient(145deg, var(--navy) 0%, var(--navy-light) 100%);
     color: #fff;
-    padding: 48px 24px;
+    padding: 56px 28px;
     text-align: center;
   }
   .cover-tag {
     display: inline-block;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 24px;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 28px;
+    text-transform: uppercase;
   }
-  .cover-inner { max-width: 600px; margin: 0 auto; }
+  .cover-inner { max-width: 640px; margin: 0 auto; }
   .cover h1 {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 16px;
+    line-height: 1.35;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
   }
   .cover h1 .accent {
     color: var(--gold-light);
   }
   .cover-sub {
-    font-size: 16px;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.7;
-    margin-bottom: 32px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.8;
+    margin-bottom: 36px;
   }
   .cover-meta {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px 24px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    gap: 20px 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.15);
   }
   .cover-meta div {
-    font-size: 14px;
+    font-size: 16px;
   }
   .cover-meta strong {
     display: block;
     color: var(--gold-light);
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.15em;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     font-weight: 600;
   }
   .cover-meta span {
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
   }
-  .scroll-hint { display: none; }
 
   /* ========== 主內容 ========== */
   main {
-    max-width: 680px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 0 16px 40px;
+    padding: 0 20px 48px;
   }
 
   section {
-    padding: 32px 0;
+    padding: 40px 0;
     border-bottom: 1px solid var(--gray-200);
   }
   section:last-child { border-bottom: none; }
@@ -113,76 +114,79 @@
   }
 
   h2 {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 800;
     color: var(--navy);
-    margin-bottom: 8px;
-    line-height: 1.3;
+    margin-bottom: 10px;
+    line-height: 1.35;
   }
 
   .lead {
-    font-size: 15px;
+    font-size: 17px;
     color: var(--gray-500);
-    margin-bottom: 24px;
-    line-height: 1.6;
+    margin-bottom: 28px;
+    line-height: 1.7;
   }
 
   /* ========== KPI 卡片 ========== */
   .kpi-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 16px;
+    margin-bottom: 24px;
   }
 
   .kpi {
     background: #fff;
     border-radius: var(--radius);
-    padding: 16px;
+    padding: 20px;
     box-shadow: var(--shadow);
-    border-left: 4px solid var(--gray-300);
+    border-left: 5px solid var(--gray-300);
+    transition: transform 0.15s ease;
   }
+  .kpi:hover { transform: translateY(-1px); }
   .kpi.good { border-left-color: var(--green); background: var(--green-bg); }
   .kpi.warn { border-left-color: var(--amber); background: var(--amber-bg); }
   .kpi.bad { border-left-color: var(--red); background: var(--red-bg); }
 
   .kpi .label {
-    font-size: 13px;
-    color: var(--gray-500);
+    font-size: 15px;
+    color: var(--gray-600);
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .kpi .value {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: 800;
-    color: var(--gray-900);
+    color: var(--gray-800);
     line-height: 1.1;
   }
   .kpi.good .value { color: var(--green); }
   .kpi.warn .value { color: var(--amber); }
   .kpi.bad .value { color: var(--red); }
   .kpi .unit {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     color: var(--gray-500);
-    margin-left: 2px;
+    margin-left: 3px;
   }
   .kpi .note {
-    font-size: 12px;
-    color: var(--gray-500);
-    margin-top: 6px;
+    font-size: 14px;
+    color: var(--gray-600);
+    margin-top: 8px;
+    line-height: 1.5;
   }
 
   /* ========== 定位卡 ========== */
   .position-card {
     background: #fff;
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 24px;
     box-shadow: var(--shadow);
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 18px;
+    line-height: 1.9;
     color: var(--gray-700);
-    border-left: 4px solid var(--gold);
+    border-left: 5px solid var(--gold);
   }
   .position-card em {
     font-style: normal;
@@ -198,15 +202,15 @@
   /* ========== 警示卡 ========== */
   .alert-grid {
     display: grid;
-    gap: 16px;
+    gap: 20px;
   }
 
   .alert {
     background: #fff;
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 24px;
     box-shadow: var(--shadow);
-    border-left: 5px solid var(--gray-300);
+    border-left: 6px solid var(--gray-300);
   }
   .alert.red { border-left-color: var(--red); background: var(--red-bg); }
   .alert.amber { border-left-color: var(--amber); background: var(--amber-bg); }
@@ -215,18 +219,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     gap: 12px;
   }
   .alert-title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
-    color: var(--gray-900);
+    color: var(--gray-800);
   }
   .alert-num {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 5px 14px;
     border-radius: 20px;
     white-space: nowrap;
   }
@@ -236,26 +240,26 @@
   .alert-stat {
     display: flex;
     align-items: baseline;
-    gap: 12px;
-    margin-bottom: 12px;
-    padding-bottom: 12px;
+    gap: 14px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
     border-bottom: 1px dashed var(--gray-200);
   }
   .alert-stat .big {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 800;
     line-height: 1;
   }
   .alert-stat .big.red { color: var(--red); }
   .alert-stat .big.amber { color: var(--amber); }
   .alert-stat .delta {
-    font-size: 14px;
-    font-weight: 600;
-    padding: 3px 8px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4px 10px;
     border-radius: 6px;
   }
-  .alert.red .delta { color: var(--red); background: rgba(229, 62, 62, 0.1); }
-  .alert.amber .delta { color: var(--amber); background: rgba(221, 107, 32, 0.1); }
+  .alert.red .delta { color: var(--red); background: rgba(229, 62, 62, 0.12); }
+  .alert.amber .delta { color: var(--amber); background: rgba(221, 107, 32, 0.12); }
 
   .alert ul {
     list-style: none;
@@ -263,61 +267,63 @@
     margin: 0;
   }
   .alert li {
-    font-size: 15px;
+    font-size: 17px;
     color: var(--gray-600);
-    padding: 6px 0 6px 20px;
+    padding: 8px 0 8px 24px;
     position: relative;
-    line-height: 1.6;
+    line-height: 1.7;
   }
   .alert li::before {
     content: "•";
     position: absolute;
-    left: 4px;
+    left: 6px;
     color: var(--gold);
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
   }
   .alert li strong {
-    color: var(--gray-900);
+    color: var(--gray-800);
   }
 
   /* ========== 圖表 ========== */
   .chart-grid {
     display: grid;
-    gap: 20px;
+    gap: 24px;
   }
 
   .chart-card {
     background: #fff;
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 24px;
     box-shadow: var(--shadow);
   }
   .chart-head {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
     border-bottom: 1px solid var(--gray-100);
   }
   .chart-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--navy);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .chart-sub {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--gray-500);
+    line-height: 1.5;
   }
   .chart-badge {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 20px;
     background: var(--gray-100);
     color: var(--gray-600);
+    flex-shrink: 0;
   }
   .chart-card svg {
     width: 100%;
@@ -330,7 +336,7 @@
     background: var(--red-bg);
     border: 1px solid rgba(229, 62, 62, 0.2);
     border-radius: var(--radius);
-    padding: 24px;
+    padding: 28px;
     box-shadow: var(--shadow);
   }
 
@@ -339,104 +345,112 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background: var(--red);
     color: #fff;
     border-radius: 50%;
-    margin: 0 auto 16px;
+    margin: 0 auto 20px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+    box-shadow: 0 6px 16px rgba(229, 62, 62, 0.35);
   }
-  .risk-badge .emoji { font-size: 32px; line-height: 1; }
-  .risk-badge .label { font-size: 13px; font-weight: 700; margin-top: 4px; }
+  .risk-badge .emoji { font-size: 40px; line-height: 1; }
+  .risk-badge .label { font-size: 15px; font-weight: 700; margin-top: 6px; }
   .risk-badge::before { display: none; }
 
   .risk-body { text-align: center; }
   .risk-body h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--red);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   .risk-body h3::before { content: ""; }
   .risk-body > p {
-    font-size: 15px;
+    font-size: 17px;
     color: var(--gray-600);
-    margin-bottom: 16px;
-    line-height: 1.6;
+    margin-bottom: 20px;
+    line-height: 1.7;
   }
 
   .risk-table {
     width: 100%;
     border-collapse: collapse;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    font-size: 14px;
+    font-size: 16px;
   }
   .risk-table th, .risk-table td {
-    padding: 10px 12px;
+    padding: 14px 16px;
     text-align: left;
     border-bottom: 1px solid var(--gray-100);
   }
   .risk-table th {
     background: var(--gray-50);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
-    color: var(--gray-500);
+    color: var(--gray-600);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
   .risk-table tr:last-child td { border-bottom: none; }
+  .risk-table tbody tr:nth-child(odd) { background: rgba(247,250,252,0.5); }
   .risk-table .trigger { color: var(--red); font-weight: 700; }
   .risk-table .ok { color: var(--green); font-weight: 700; }
 
   /* ========== 列印 ========== */
   @media print {
-    body { background: white; font-size: 10px; }
-    .cover { padding: 20px; page-break-after: always; }
-    .cover::after, .cover::before, .scroll-hint { display: none; }
-    section { page-break-inside: avoid; padding: 20px 0; }
+    body { background: white; font-size: 12px; }
+    .cover { padding: 24px; page-break-after: always; }
+    section { page-break-inside: avoid; padding: 24px 0; }
     .alert, .chart-card, .kpi { box-shadow: none; page-break-inside: avoid; }
     .risk-badge::before { animation: none; }
   }
 
   /* ========== 桌面版 ========== */
   @media (min-width: 768px) {
-    body { font-size: 20px; }
-    
-    .cover { padding: 64px 32px; }
-    .cover h1 { font-size: 40px; }
-    .cover-sub { font-size: 18px; }
-    .cover-meta { gap: 24px 40px; }
-    .cover-meta div { font-size: 16px; }
-    
-    main { padding: 0 24px 60px; }
-    
-    section { padding: 48px 0; }
-    
-    h2 { font-size: 26px; }
-    .lead { font-size: 17px; }
-    
-    .kpi-grid { gap: 16px; }
-    .kpi { padding: 20px; }
-    .kpi .value { font-size: 32px; }
-    
-    .position-card { padding: 24px; font-size: 18px; }
-    
-    .alert { padding: 24px; }
-    .alert-title { font-size: 20px; }
-    .alert-stat .big { font-size: 36px; }
-    .alert li { font-size: 17px; }
-    
-    .chart-card { padding: 24px; }
-    .chart-title { font-size: 18px; }
-    
-    .risk-diagnosis { padding: 32px; }
-    .risk-body h3 { font-size: 20px; }
-    .risk-body > p { font-size: 17px; }
-    .risk-table { font-size: 16px; }
+    body { font-size: 22px; }
+
+    .cover { padding: 72px 36px; }
+    .cover h1 { font-size: 44px; }
+    .cover-sub { font-size: 20px; }
+    .cover-meta { gap: 24px 48px; }
+    .cover-meta div { font-size: 18px; }
+
+    main { padding: 0 28px 64px; }
+
+    section { padding: 56px 0; }
+
+    h2 { font-size: 30px; }
+    .lead { font-size: 19px; }
+
+    .kpi-grid { gap: 20px; }
+    .kpi { padding: 24px; }
+    .kpi .label { font-size: 16px; }
+    .kpi .value { font-size: 40px; }
+    .kpi .note { font-size: 15px; }
+
+    .position-card { padding: 28px; font-size: 20px; }
+
+    .alert { padding: 28px; }
+    .alert-title { font-size: 22px; }
+    .alert-stat .big { font-size: 44px; }
+    .alert-stat .delta { font-size: 17px; }
+    .alert li { font-size: 19px; }
+
+    .chart-card { padding: 28px; }
+    .chart-title { font-size: 20px; }
+    .chart-sub { font-size: 16px; }
+
+    .risk-diagnosis { padding: 36px; }
+    .risk-badge { width: 130px; height: 130px; }
+    .risk-badge .emoji { font-size: 44px; }
+    .risk-badge .label { font-size: 16px; }
+    .risk-body h3 { font-size: 22px; }
+    .risk-body > p { font-size: 19px; }
+    .risk-table { font-size: 17px; }
+    .risk-table th, .risk-table td { padding: 16px 20px; }
   }
 </style>
 </head>
@@ -504,7 +518,7 @@
    </div>
 </section>
 
-<!-- ========== 二、五項觀察重點 ========== -->
+<!-- ========== 二、四項觀察重點 ========== -->
 <section>
   <span class="eyebrow">02 · Key Alerts</span>
   <h2>四項觀察重點</h2>
@@ -518,10 +532,10 @@
       </div>
       <div class="alert-stat">
         <span class="big red">7.21%</span>
-        <span class="delta">↗ +0.21百分點</span>
+        <span class="delta">↗ +0.21 百分點</span>
       </div>
       <ul>
-        <li>115 年 4 月 <strong>254 萬、7.21%</strong></li>
+        <li>115 年 4 月逾期 <strong>254 萬、7.21%</strong></li>
         <li>備抵呆帳 <strong>254 萬</strong></li>
         <li><strong>須控管新案</strong></li>
       </ul>
@@ -534,7 +548,7 @@
       </div>
       <div class="alert-stat">
         <span class="big red">16.34%</span>
-        <span class="delta">↘ -2.7百分點</span>
+        <span class="delta">↘ -2.7 百分點</span>
       </div>
       <ul>
         <li>110 年 19.03% → 114 年 16.34%</li>
@@ -548,7 +562,7 @@
         <div class="alert-num">值得關注</div>
       </div>
       <div class="alert-stat">
-        <span class="big amber">-105<span style="font-size:1rem">人</span></span>
+        <span class="big amber">-105<span style="font-size:1.2rem"> 人</span></span>
         <span class="delta">-7.95%</span>
       </div>
       <ul>
@@ -565,7 +579,7 @@
       </div>
       <div class="alert-stat">
         <span class="big amber">73.06%</span>
-        <span class="delta">↗ +9.65百分點</span>
+        <span class="delta">↗ +9.65 百分點</span>
       </div>
       <ul>
         <li>110 年 63.41% → 115/04 73.06%</li>
@@ -591,7 +605,7 @@
         </div>
         <div class="chart-badge">DECLINE</div>
       </div>
-      <svg viewBox="0 0 360 200" width="100%" height="200">
+      <svg viewBox="0 0 360 210" width="100%" height="210">
         <defs>
           <linearGradient id="g-navy" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0%" stop-color="#163557"/>
@@ -606,30 +620,30 @@
             <stop offset="100%" stop-color="#a02e22"/>
           </linearGradient>
         </defs>
-        <line x1="40" y1="170" x2="340" y2="170" stroke="#d4cfc1" stroke-width="1"/>
-        <line x1="40" y1="20" x2="40" y2="170" stroke="#d4cfc1" stroke-width="1"/>
-        <text x="34" y="174" text-anchor="end" font-size="10" fill="#8b95a4">1200</text>
-        <text x="34" y="124" text-anchor="end" font-size="10" fill="#8b95a4">1300</text>
-        <text x="34" y="74" text-anchor="end" font-size="10" fill="#8b95a4">1400</text>
-        <text x="34" y="24" text-anchor="end" font-size="10" fill="#8b95a4">1500</text>
-        <rect x="55"  y="32"  width="35" height="138" fill="url(#g-navy)" rx="3"/>
-        <text x="72"  y="28"  text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,320</text>
-        <rect x="105" y="44"  width="35" height="126" fill="url(#g-navy)" rx="3"/>
-        <text x="122" y="40" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,292</text>
-        <rect x="155" y="50"  width="35" height="120" fill="url(#g-navy)" rx="3"/>
-        <text x="172" y="46" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,277</text>
-        <rect x="205" y="62"  width="35" height="108" fill="url(#g-gold)" rx="3"/>
-        <text x="222" y="58" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,249</text>
-        <rect x="255" y="74"  width="35" height="96"  fill="url(#g-gold)" rx="3"/>
-        <text x="272" y="70" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">1,221</text>
-        <rect x="305" y="76"  width="35" height="94"  fill="url(#g-red)" rx="3"/>
-        <text x="322" y="72" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">1,215</text>
-        <text x="72"  y="186" text-anchor="middle" font-size="10" fill="#8b95a4">110</text>
-        <text x="122" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">111</text>
-        <text x="172" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">112</text>
-        <text x="222" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">113</text>
-        <text x="272" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">114</text>
-        <text x="322" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">115/4</text>
+        <line x1="40" y1="175" x2="340" y2="175" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="20" x2="40" y2="175" stroke="#d4cfc1" stroke-width="1"/>
+        <text x="34" y="179" text-anchor="end" font-size="13" fill="#718096">1200</text>
+        <text x="34" y="129" text-anchor="end" font-size="13" fill="#718096">1300</text>
+        <text x="34" y="79" text-anchor="end" font-size="13" fill="#718096">1400</text>
+        <text x="34" y="29" text-anchor="end" font-size="13" fill="#718096">1500</text>
+        <rect x="55"  y="37"  width="35" height="138" fill="url(#g-navy)" rx="4"/>
+        <text x="72"  y="33"  text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">1,320</text>
+        <rect x="105" y="49"  width="35" height="126" fill="url(#g-navy)" rx="4"/>
+        <text x="122" y="45" text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">1,292</text>
+        <rect x="155" y="55"  width="35" height="120" fill="url(#g-navy)" rx="4"/>
+        <text x="172" y="51" text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">1,277</text>
+        <rect x="205" y="67"  width="35" height="108" fill="url(#g-gold)" rx="4"/>
+        <text x="222" y="63" text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">1,249</text>
+        <rect x="255" y="79"  width="35" height="96"  fill="url(#g-gold)" rx="4"/>
+        <text x="272" y="75" text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">1,221</text>
+        <rect x="305" y="81"  width="35" height="94"  fill="url(#g-red)" rx="4"/>
+        <text x="322" y="77" text-anchor="middle" font-size="13" fill="#c0392b" font-weight="700">1,215</text>
+        <text x="72"  y="193" text-anchor="middle" font-size="12" fill="#718096">110</text>
+        <text x="122" y="193" text-anchor="middle" font-size="12" fill="#718096">111</text>
+        <text x="172" y="193" text-anchor="middle" font-size="12" fill="#718096">112</text>
+        <text x="222" y="193" text-anchor="middle" font-size="12" fill="#718096">113</text>
+        <text x="272" y="193" text-anchor="middle" font-size="12" fill="#718096">114</text>
+        <text x="322" y="193" text-anchor="middle" font-size="12" fill="#718096">115/4</text>
       </svg>
     </div>
 
@@ -641,31 +655,31 @@
         </div>
         <div class="chart-badge">RISING</div>
       </div>
-      <svg viewBox="0 0 360 200" width="100%" height="200">
-        <line x1="40" y1="170" x2="340" y2="170" stroke="#d4cfc1" stroke-width="1"/>
-        <line x1="40" y1="20" x2="40" y2="170" stroke="#d4cfc1" stroke-width="1"/>
-        <text x="34" y="174" text-anchor="end" font-size="10" fill="#8b95a4">0</text>
-        <text x="34" y="124" text-anchor="end" font-size="10" fill="#8b95a4">3</text>
-        <text x="34" y="74" text-anchor="end" font-size="10" fill="#8b95a4">6</text>
-        <text x="34" y="24" text-anchor="end" font-size="10" fill="#8b95a4">9</text>
-        <rect x="55"  y="76" width="35" height="94"  fill="#d68910" rx="3"/>
-        <text x="72"  y="72" text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">5.63</text>
-        <rect x="105" y="67" width="35" height="103" fill="#d68910" rx="3"/>
-        <text x="122" y="63" text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">6.20</text>
-        <rect x="155" y="53" width="35" height="117" fill="#d68910" rx="3"/>
-        <text x="172" y="49" text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">7.05</text>
-        <rect x="205" y="55" width="35" height="115" fill="#d68910" rx="3"/>
-        <text x="222" y="51" text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">6.89</text>
-        <rect x="255" y="53" width="35" height="117" fill="#d68910" rx="3"/>
-        <text x="272" y="49" text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">7.00</text>
-        <rect x="305" y="50" width="35" height="120" fill="url(#g-red)" rx="3"/>
-        <text x="322" y="46" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">7.21</text>
-        <text x="72"  y="186" text-anchor="middle" font-size="10" fill="#8b95a4">110</text>
-        <text x="122" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">111</text>
-        <text x="172" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">112</text>
-        <text x="222" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">113</text>
-        <text x="272" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">114</text>
-        <text x="322" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">115/4</text>
+      <svg viewBox="0 0 360 210" width="100%" height="210">
+        <line x1="40" y1="175" x2="340" y2="175" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="20" x2="40" y2="175" stroke="#d4cfc1" stroke-width="1"/>
+        <text x="34" y="179" text-anchor="end" font-size="13" fill="#718096">0</text>
+        <text x="34" y="129" text-anchor="end" font-size="13" fill="#718096">3</text>
+        <text x="34" y="79" text-anchor="end" font-size="13" fill="#718096">6</text>
+        <text x="34" y="29" text-anchor="end" font-size="13" fill="#718096">9</text>
+        <rect x="55"  y="81" width="35" height="94"  fill="#d68910" rx="4"/>
+        <text x="72"  y="77" text-anchor="middle" font-size="13" fill="#d68910" font-weight="700">5.63</text>
+        <rect x="105" y="72" width="35" height="103" fill="#d68910" rx="4"/>
+        <text x="122" y="68" text-anchor="middle" font-size="13" fill="#d68910" font-weight="700">6.20</text>
+        <rect x="155" y="58" width="35" height="117" fill="#d68910" rx="4"/>
+        <text x="172" y="54" text-anchor="middle" font-size="13" fill="#d68910" font-weight="700">7.05</text>
+        <rect x="205" y="60" width="35" height="115" fill="#d68910" rx="4"/>
+        <text x="222" y="56" text-anchor="middle" font-size="13" fill="#d68910" font-weight="700">6.89</text>
+        <rect x="255" y="58" width="35" height="117" fill="#d68910" rx="4"/>
+        <text x="272" y="54" text-anchor="middle" font-size="13" fill="#d68910" font-weight="700">7.00</text>
+        <rect x="305" y="55" width="35" height="120" fill="url(#g-red)" rx="4"/>
+        <text x="322" y="51" text-anchor="middle" font-size="13" fill="#c0392b" font-weight="700">7.21</text>
+        <text x="72"  y="193" text-anchor="middle" font-size="12" fill="#718096">110</text>
+        <text x="122" y="193" text-anchor="middle" font-size="12" fill="#718096">111</text>
+        <text x="172" y="193" text-anchor="middle" font-size="12" fill="#718096">112</text>
+        <text x="222" y="193" text-anchor="middle" font-size="12" fill="#718096">113</text>
+        <text x="272" y="193" text-anchor="middle" font-size="12" fill="#718096">114</text>
+        <text x="322" y="193" text-anchor="middle" font-size="12" fill="#718096">115/4</text>
       </svg>
     </div>
 
@@ -677,32 +691,32 @@
         </div>
         <div class="chart-badge">DECLINE</div>
       </div>
-      <svg viewBox="0 0 360 200" width="100%" height="200">
-        <line x1="40" y1="170" x2="340" y2="170" stroke="#d4cfc1" stroke-width="1"/>
-        <line x1="40" y1="20" x2="40" y2="170" stroke="#d4cfc1" stroke-width="1"/>
-        <text x="34" y="174" text-anchor="end" font-size="10" fill="#8b95a4">0</text>
-        <text x="34" y="134" text-anchor="end" font-size="10" fill="#8b95a4">5</text>
-        <text x="34" y="94" text-anchor="end" font-size="10" fill="#8b95a4">10</text>
-        <text x="34" y="54" text-anchor="end" font-size="10" fill="#8b95a4">15</text>
-        <text x="34" y="14" text-anchor="end" font-size="10" fill="#8b95a4">20</text>
-        <rect x="55"  y="22" width="35" height="148" fill="url(#g-navy)" rx="3"/>
-        <text x="72"  y="18" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">19.0</text>
-        <rect x="105" y="34" width="35" height="136" fill="url(#g-navy)" rx="3"/>
-        <text x="122" y="30" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">17.4</text>
-        <rect x="155" y="48" width="35" height="122" fill="url(#g-navy)" rx="3"/>
-        <text x="172" y="44" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">15.6</text>
-        <rect x="205" y="44" width="35" height="126" fill="url(#g-gold)" rx="3"/>
-        <text x="222" y="40" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">16.2</text>
-        <rect x="255" y="43" width="35" height="127" fill="url(#g-gold)" rx="3"/>
-        <text x="272" y="39" text-anchor="middle" font-size="11" fill="#0a1f3a" font-weight="700">16.3</text>
-        <rect x="305" y="44" width="35" height="126" fill="url(#g-red)" rx="3"/>
-        <text x="322" y="40" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">16.3</text>
-        <text x="72"  y="186" text-anchor="middle" font-size="10" fill="#8b95a4">110</text>
-        <text x="122" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">111</text>
-        <text x="172" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">112</text>
-        <text x="222" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">113</text>
-        <text x="272" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">114</text>
-        <text x="322" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">115/4</text>
+      <svg viewBox="0 0 360 210" width="100%" height="210">
+        <line x1="40" y1="175" x2="340" y2="175" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="20" x2="40" y2="175" stroke="#d4cfc1" stroke-width="1"/>
+        <text x="34" y="179" text-anchor="end" font-size="13" fill="#718096">0</text>
+        <text x="34" y="139" text-anchor="end" font-size="13" fill="#718096">5</text>
+        <text x="34" y="99" text-anchor="end" font-size="13" fill="#718096">10</text>
+        <text x="34" y="59" text-anchor="end" font-size="13" fill="#718096">15</text>
+        <text x="34" y="19" text-anchor="end" font-size="13" fill="#718096">20</text>
+        <rect x="55"  y="27" width="35" height="148" fill="url(#g-navy)" rx="4"/>
+        <text x="72"  y="23" text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">19.0</text>
+        <rect x="105" y="39" width="35" height="136" fill="url(#g-navy)" rx="4"/>
+        <text x="122" y="35" text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">17.4</text>
+        <rect x="155" y="53" width="35" height="122" fill="url(#g-navy)" rx="4"/>
+        <text x="172" y="49" text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">15.6</text>
+        <rect x="205" y="49" width="35" height="126" fill="url(#g-gold)" rx="4"/>
+        <text x="222" y="45" text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">16.2</text>
+        <rect x="255" y="48" width="35" height="127" fill="url(#g-gold)" rx="4"/>
+        <text x="272" y="44" text-anchor="middle" font-size="13" fill="#0a1f3a" font-weight="700">16.3</text>
+        <rect x="305" y="49" width="35" height="126" fill="url(#g-red)" rx="4"/>
+        <text x="322" y="45" text-anchor="middle" font-size="13" fill="#c0392b" font-weight="700">16.3</text>
+        <text x="72"  y="193" text-anchor="middle" font-size="12" fill="#718096">110</text>
+        <text x="122" y="193" text-anchor="middle" font-size="12" fill="#718096">111</text>
+        <text x="172" y="193" text-anchor="middle" font-size="12" fill="#718096">112</text>
+        <text x="222" y="193" text-anchor="middle" font-size="12" fill="#718096">113</text>
+        <text x="272" y="193" text-anchor="middle" font-size="12" fill="#718096">114</text>
+        <text x="322" y="193" text-anchor="middle" font-size="12" fill="#718096">115/4</text>
       </svg>
     </div>
 
@@ -714,33 +728,33 @@
         </div>
         <div class="chart-badge">RISING</div>
       </div>
-      <svg viewBox="0 0 360 200" width="100%" height="200">
-        <line x1="40" y1="170" x2="340" y2="170" stroke="#d4cfc1" stroke-width="1"/>
-        <line x1="40" y1="20" x2="40" y2="170" stroke="#d4cfc1" stroke-width="1"/>
-        <line x1="40" y1="55" x2="340" y2="55" stroke="#c0392b" stroke-dasharray="4 3" stroke-width="1.5"/>
-        <text x="335" y="52" text-anchor="end" font-size="9" fill="#c0392b">警戒 100%</text>
-        <text x="34" y="174" text-anchor="end" font-size="10" fill="#8b95a4">0</text>
-        <text x="34" y="124" text-anchor="end" font-size="10" fill="#8b95a4">40</text>
-        <text x="34" y="74" text-anchor="end" font-size="10" fill="#8b95a4">80</text>
-        <text x="34" y="24" text-anchor="end" font-size="10" fill="#8b95a4">120</text>
-        <rect x="55"  y="91"  width="35" height="79"  fill="#1e8449" rx="3"/>
-        <text x="72"  y="87"  text-anchor="middle" font-size="11" fill="#1e8449" font-weight="700">63.4</text>
-        <rect x="105" y="90"  width="35" height="80"  fill="#1e8449" rx="3"/>
-        <text x="122" y="86"  text-anchor="middle" font-size="11" fill="#1e8449" font-weight="700">63.9</text>
-        <rect x="155" y="72"  width="35" height="98"  fill="#d68910" rx="3"/>
-        <text x="172" y="68"  text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">78.2</text>
-        <rect x="205" y="84"  width="35" height="86"  fill="#1e8449" rx="3"/>
-        <text x="222" y="80"  text-anchor="middle" font-size="11" fill="#1e8449" font-weight="700">68.5</text>
-        <rect x="255" y="82"  width="35" height="88"  fill="#1e8449" rx="3"/>
-        <text x="272" y="78"  text-anchor="middle" font-size="11" fill="#1e8449" font-weight="700">70.7</text>
-        <rect x="305" y="79"  width="35" height="91"  fill="#d68910" rx="3"/>
-        <text x="322" y="75"  text-anchor="middle" font-size="11" fill="#d68910" font-weight="700">73.1</text>
-        <text x="72"  y="186" text-anchor="middle" font-size="10" fill="#8b95a4">110</text>
-        <text x="122" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">111</text>
-        <text x="172" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">112</text>
-        <text x="222" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">113</text>
-        <text x="272" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">114</text>
-        <text x="322" y="186" text-anchor="middle" font-size="10" fill="#8b95a4">115/4</text>
+      <svg viewBox="0 0 360 210" width="100%" height="210">
+        <line x1="40" y1="175" x2="340" y2="175" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="20" x2="40" y2="175" stroke="#d4cfc1" stroke-width="1"/>
+        <line x1="40" y1="60" x2="340" y2="60" stroke="#c0392b" stroke-dasharray="5 3" stroke-width="1.5"/>
+        <text x="335" y="57" text-anchor="end" font-size="12" fill="#c0392b" font-weight="600">警戒 100%</text>
+        <text x="34" y="179" text-anchor="end" font-size="13" fill="#718096">0</text>
+        <text x="34" y="129" text-anchor="end" font-size="13" fill="#718096">40</text>
+        <text x="34" y="79" text-anchor="end" font-size="13" fill="#718096">80</text>
+        <text x="34" y="29" text-anchor="end" font-size="13" fill="#718096">120</text>
+        <rect x="55"  y="96"  width="35" height="79"  fill="#1e8449" rx="4"/>
+        <text x="72"  y="92"  text-anchor="middle" font-size="13" fill="#1e8449" font-weight="700">63.4</text>
+        <rect x="105" y="95"  width="35" height="80"  fill="#1e8449" rx="4"/>
+        <text x="122" y="91"  text-anchor="middle" font-size="13" fill="#1e8449" font-weight="700">63.9</text>
+        <rect x="155" y="77"  width="35" height="98"  fill="#d68910" rx="4"/>
+        <text x="172" y="73"  text-anchor="middle" font-size="13" fill="#d68910" font-weight="700">78.2</text>
+        <rect x="205" y="89"  width="35" height="86"  fill="#1e8449" rx="4"/>
+        <text x="222" y="85"  text-anchor="middle" font-size="13" fill="#1e8449" font-weight="700">68.5</text>
+        <rect x="255" y="87"  width="35" height="88"  fill="#1e8449" rx="4"/>
+        <text x="272" y="83"  text-anchor="middle" font-size="13" fill="#1e8449" font-weight="700">70.7</text>
+        <rect x="305" y="84"  width="35" height="91"  fill="#d68910" rx="4"/>
+        <text x="322" y="80"  text-anchor="middle" font-size="13" fill="#d68910" font-weight="700">73.1</text>
+        <text x="72"  y="193" text-anchor="middle" font-size="12" fill="#718096">110</text>
+        <text x="122" y="193" text-anchor="middle" font-size="12" fill="#718096">111</text>
+        <text x="172" y="193" text-anchor="middle" font-size="12" fill="#718096">112</text>
+        <text x="222" y="193" text-anchor="middle" font-size="12" fill="#718096">113</text>
+        <text x="272" y="193" text-anchor="middle" font-size="12" fill="#718096">114</text>
+        <text x="322" y="193" text-anchor="middle" font-size="12" fill="#718096">115/4</text>
       </svg>
     </div>
   </div>
